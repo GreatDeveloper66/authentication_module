@@ -6,6 +6,7 @@ import { connect } from 'mongoose';
 import session from 'express-session';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import authRoutes from './routes/authRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -35,7 +36,7 @@ app.use(session({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(join(__dirname, 'client', 'build')));
-//app.use('/api/auth', authRoutes);   
+app.use('/api/auth', authRoutes);  
 //app.use('/api/twilio', twilioRoutes);   
 //app.use('/api/auth', nodeMailerRoutes);
 
