@@ -1,0 +1,16 @@
+{
+  "name": "authentication_module",
+  "version": "1.0.0",
+  "description": "An app that covers all basic user authentication and authorization functions",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "authorization",
+    "authentication",
+    "user"
+  ],
+  "author": "Adam Shaffer",
+  "license": "MIT"
+}
