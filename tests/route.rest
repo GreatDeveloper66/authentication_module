@@ -1,0 +1,123 @@
+##
+# Register a new user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "ashafferr",
+    "email": "ashafferr@gmail.com",
+    "password": "777**gfaeaiop",
+    "phoneNumber": "+13098575164"
+}
+
+###
+#login with non existing user should fail
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "doesntexist.com",
+    "password": "777***fauyaiop"
+}
+
+###
+#login with wrong password should fail
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "newUserZZZ@gmail.com",
+    "password": "wrongpassword"
+}
+
+###
+#login with new user's email and password
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "ashafferr@gmail.com",
+    "password": "777**gfaeaiop"
+}
+
+###
+GET http://localhost:5000/api/auth/user/65f02638cf386be014e4be1f
+Headers:
+    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYwMjYzOGNmMzg2YmUwMTRlNGJlMWYiLCJpYXQiOjE3MTAyMzcyOTgsImV4cCI6MTcxMDI0MDg5OH0.18ypIsZz-j2agwrhBxs1vWsO7soIeazE8vFZqh6NKTQ
+
+###
+PATCH http://localhost:5000/api/auth/user/65f02638cf386be014e4be1f
+Content-Type: application/json
+
+{
+    "name": "newUserZZ@gmail.com",
+    "password": "777***huyuiopSSSupdatedg"
+}
+
+###
+PATCH http://localhost:5000/api/auth/user/65f02638cf386be014e4be1f
+Content-Type: application/json
+Headers:
+    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYwMjYzOGNmMzg2YmUwMTRlNGJlMWYiLCJpYXQiOjE3MTAyMzcyOTgsImV4cCI6MTcxMDI0MDg5OH0.18ypIsZz-j2agwrhBxs1vWsO7soIeazE8vFZqh6NKTQ
+
+{
+    "name": "testSSSLupdatedgggh",
+    "password": "777***huyuiopSSSupdatehhdg"
+}
+
+
+
+###
+DELETE http://localhost:5000/api/auth/user/65a4a32cfd076064f593979e
+
+###
+DELETE http://localhost:5000/api/auth/user/65f02638cf386be014e4be1f
+Content-Type: application/json
+Headers:
+    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWYwMjYzOGNmMzg2YmUwMTRlNGJlMWYiLCJpYXQiOjE3MTAyMzcyOTgsImV4cCI6MTcxMDI0MDg5OH0.18ypIsZz-j2agwrhBxs1vWsO7soIeazE8vFZqh6NKTQ
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "tessSSSLModm",
+    "email": "tessSSSLMNodmn@testdds.com",
+    "password": "777***huyuiopSSStykn"
+}
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "doesntexist.com",
+    "password": "777***huyuiopSSSttv"
+}
+###
+
+
+
+
+
+###
+POST http://localhost:5000/api/auth/logout/
+
+
+
+
+###
+POST http://localhost:5000/api/auth/send-code
+Content-Type: application/json
+
+{
+    "email": "ashaffe@gmail.com"
+}
+
+###
+POST http://localhost:5000/api/auth/verify-code
+Content-Type: application/json
+
+{
+    "email": "ashaffe@gmail.com",
+    "code": "225225"
+}
